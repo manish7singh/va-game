@@ -1,0 +1,13 @@
+<div class="board">
+  <div *ngFor="let row of gameBoard; let i = index">
+    <div *ngFor="let square of row; let j = index">
+      <va-square [square]="square" [i]="i" [j]="j"></va-square>
+    </div>
+  </div>
+</div>
+<div class="container" style="text-align: center">
+  <br>
+  <h3>{{service.blackTurn ? 'Black' : 'Red'}}'s Turn</h3>
+  <br><hr>
+  <!--<button type="button" (click)="service.restartGame()">Restart Game</button>-->
+</div>

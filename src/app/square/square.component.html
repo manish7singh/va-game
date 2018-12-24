@@ -1,0 +1,12 @@
+<div class="square float-left" [class.allowed]="square.validSquare" [class.restricted]="!square.validSquare" [class.highlight]="square.highlight">
+  <!--{{i}} {{j}}-->
+  <div *ngIf="square.token" class="cover-space" (click)="service.chooseToken(square.token)">
+    <div *ngIf="square.token.tokenType === 'pawn'">
+      <va-pawn [pawn]="square.token"></va-pawn>
+    </div>
+    <div *ngIf="square.token.tokenType === 'king'">
+      <va-king [king]="square.token"></va-king>
+    </div>
+  </div>
+  <div *ngIf="square.validSquare && !square.token" class="cover-space" (click)="service.chooseSquareToMoveToken(square)"></div>
+</div>
